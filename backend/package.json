@@ -9,7 +9,8 @@
     "dev": "tsc --noEmit && tsx src/server.ts",
     "start": "tsc && node dist/server.js",
     "debug": "tsx src/server.ts",
-    "watch": "tsx watch src/server.ts"
+    "watch": "tsx watch src/server.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
