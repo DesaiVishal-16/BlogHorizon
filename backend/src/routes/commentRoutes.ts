@@ -7,8 +7,8 @@ import {
   getPostComments,
   toggleCommentLike,
   updateComment,
-} from "../controllers/commentController";
-import protect from "../middlewares/auth";
+} from "../controllers/commentController.js";
+import protect from "../middlewares/auth.js";
 
 export const commentRoutes: Router = express.Router();
 

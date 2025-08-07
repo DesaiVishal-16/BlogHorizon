@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Post from "../models/Post";
-import Comment from "../models/Comment";
+import Post from "../models/Post.js";
+import Comment from "../models/Comment.js";
 import mongoose from "mongoose";
 
 export const createComment = async (req: Request, res: Response) => {

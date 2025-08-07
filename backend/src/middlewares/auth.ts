@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import User, { UserType } from "../models/User";
-import { TokenPayload } from "../controllers/authController";
+import User, { UserType } from "../models/User.js";
+import { TokenPayload } from "../controllers/authController.js";
 
 declare global {
   namespace Express {
