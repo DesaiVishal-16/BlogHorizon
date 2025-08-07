@@ -1,4 +1,4 @@
-import express, { Request, Response, Router } from "express";
+import express, { Router } from "express";
 import {
   googleAuthSuccess,
   googleSignIn,
@@ -20,7 +20,7 @@ if (!process.env.JWT_SECRET) {
   throw new Error("JWT secret is not defined");
 }
 
-authRoutes.get("/me", protect, (req: Request, res: Response) => {
+authRoutes.get("/me", protect, (req, res) => {
   return res.status(200).json({ success: true, user: req.user });
 });
 // core auth
