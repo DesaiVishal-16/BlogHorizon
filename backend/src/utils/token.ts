@@ -20,6 +20,7 @@ export const createRefreshToken = (userId: string): string => {
     expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || "7d",
   } as jwt.SignOptions);
 };
+const prod = process.env.NODE_ENV === "production";
 
 export const sendAuthCookies = (
   res: Response,
@@ -28,13 +29,13 @@ export const sendAuthCookies = (
 ) => {
   res.cookie("accessToken", accessToken, {
     httpOnly: true,
-    secure: true,
+    secure: prod,
     sameSite: "none",
     maxAge: 60 * 60 * 1000,
   });
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
-    secure: true,
+    secure: prod,
     sameSite: "none",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
