@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc --noEmit && tsx src/server.ts",
-    "start": "tsc && node dist/server.js",
+    "dev": "node api.js && tsc --noEmit && tsx src/server.ts",
+    "start": "node api.js && tsc && node dist/server.js",
     "debug": "tsx src/server.ts",
     "watch": "tsx watch src/server.ts",
     "build": "tsc"
