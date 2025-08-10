@@ -22,13 +22,15 @@ const GoogleAuthButton = () => {
   };
 
   return (
-    <GoogleLogin
-      onSuccess={handleSuccess}
-      onError={() => console.error("Google login failed")}
-      theme="outline"
-      size="large"
-      width="100%"
-    />
+    <div className="w-full">
+      <GoogleLogin
+        onSuccess={handleSuccess}
+        onError={() => console.error("Google login failed")}
+        theme="outline"
+        size="large"
+        width="100%"
+      />
+    </div>
   );
 };
 
