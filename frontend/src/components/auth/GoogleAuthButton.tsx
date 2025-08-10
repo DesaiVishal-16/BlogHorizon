@@ -1,29 +1,33 @@
-import { useGoogleLogin } from "@react-oauth/google";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useAppDispatch } from "../../store/hooks";
 import { googleLogin } from "../../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
-import { PrimaryButton } from "../Buttons";
-import { Icons } from "../icons";
 
 const GoogleAuthButton = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      dispatch(googleLogin(tokenResponse.access_token));
-      navigate("/posts");
-    },
-    onError: () => console.error("Google login failed"),
-  });
+  const handleSuccess = async (response: CredentialResponse) => {
+    try {
+      const credential = response?.credential;
+      if (credential) {
+        dispatch(googleLogin(credential));
+        navigate("/posts");
+      } else {
+        console.error("Google login response missing credential");
+      }
+    } catch (err) {
+      console.error("Google login error: ", err);
+    }
+  };
 
   return (
-    <PrimaryButton
-      name="Continue with Google"
-      onClick={() => login()}
-      icon={<Icons.Google />}
-      className="!rounded-xl !bg-blue-800 !text-white hover:!bg-blue-700 w-full"
-    />
+    <div className="w-full flex justify-center">
+      <GoogleLogin
+        onSuccess={handleSuccess}
+        onError={() => console.error("Google login failed")}
+      />
+    </div>
   );
 };
 
