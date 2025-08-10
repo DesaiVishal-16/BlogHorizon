@@ -24,6 +24,7 @@ import { TbLogout } from "react-icons/tb";
 import { IoMdCamera } from "react-icons/io";
 import { FaShareFromSquare } from "react-icons/fa6";
 import { MdOutlineCancel } from "react-icons/md";
+import { BsGoogle } from "react-icons/bs";
 
 const Icons = {
   Profile: FaUserCircle,
@@ -48,6 +49,7 @@ const Icons = {
   ShareLink: FaShareFromSquare,
   Cancel: MdOutlineCancel,
   DropDownLine: RiArrowDropDownLine,
+  Google: BsGoogle,
 };
 
 export default Icons;
