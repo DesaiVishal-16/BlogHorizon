@@ -25,6 +25,9 @@ const GoogleAuthButton = () => {
     <GoogleLogin
       onSuccess={handleSuccess}
       onError={() => console.error("Google login failed")}
+      theme="outline"
+      size="large"
+      width="100%"
     />
   );
 };

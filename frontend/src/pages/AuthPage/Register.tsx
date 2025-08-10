@@ -105,9 +105,7 @@ const Register: React.FC = () => {
           className="!rounded-xl mt-2 !bg-blue-800 hover:!bg-blue-700"
         />
         <span className="text-xl font-semibold text-center">0R</span>
-        <div className="w-full">
-          <GoogleAuthButton />
-        </div>
+        <GoogleAuthButton />
       </form>
       <div className="text-md font-semibold">
         <span> Or </span>{" "}
